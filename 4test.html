@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Publication Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+
+    /* Fixed Sidebar */
+    .side-header {
+      width: 200px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+      transition: left 0.3s ease;
+
+    }
+
+    .side-header .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .side-header .logo img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .nav-links a:hover {
+      color: #ffcc00;
+    }
+
+    /* Main Layout (content + footer) */
+    .content-area {
+      margin-left: 200px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      padding: 40px 20px;
+      flex-grow: 1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 40px 25px;
+      height: 250px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .priority-icon {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .card-content h3 {
+      font-size: 1.5rem;
+      color: #003B49;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #003B49;
+      margin-bottom: 20px;
+    }
+
+    .see-more {
+      font-size: 0.8rem;
+      color: #007BBD;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .see-more:hover {
+      text-decoration: underline;
+    }
+
+    .card:nth-child(1) { background-color: #c8f3f0; }
+    .card:nth-child(2) { background-color: #fadb87; }
+    .card:nth-child(3) { background-color: #e0f3c8; }
+    .card:nth-child(4) { background-color: #f3c8cb; }
+
+    /* Footer */
+    footer {
+      background-color: #184a39;;
+      color: white;
+      padding: 40px 20px;
+      width: 100%;
+    }
+
+    footer .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    footer .col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer h5 {
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .side-header {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-links a {
+        margin: 10px;
+      }
+
+      .content-area {
+        margin-left: 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="side-header">
+    <div>
+      <div class="logo">
+        <img src="logo1.png" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <a href="publicationtest.html">Publication</a>
+        <a href="success.html">Success Stories</a>
+        <a href="#">Portfolio</a>
+        <a href="FourBetters.html">FourBetters</a>
+        <a href="index.html">Home</a>
+        <a href="News.html">News</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content + Footer -->
+  <div class="content-area">
+    <div class="main-content">
+      <div class="grid">
+        <div class="card">
+          <div class="card-content">
+            <img src="main/images/BP.png" alt="Priority Icon" class="priority-icon" />
+            <h3>Priority 1</h3>
+            <p class="subtitle">Sustainable Agricultural Production</p>
+            <a href="#" onclick="openPDF('https://www.fao.org/fileadmin/user_upload/FAO-countries/India/docs/Programmes_Projects/Priority1.pdf')" class="see-more">CLICK TO SEE MORE →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <img src="main/images/BN.png" alt="Priority Icon" class="priority-icon" />
+            <h3>Priority 2</h3>
+            <p class="subtitle">Food and Nutrition Security</p>
+            <a href="#" onclick="openPDF('https://www.fao.org/fileadmin/user_upload/FAO-countries/India/docs/Programmes_Projects/Priority2.pdf')" class="see-more">CLICK TO SEE MORE →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <img src="main/images/BE.png" alt="Priority Icon" class="priority-icon" />
+            <h3>Priority 3</h3>
+            <p class="subtitle">Climate Resilience and Sustainable Natural Resource Management</p>
+            <a href="#" onclick="openPDF('https://www.fao.org/fileadmin/user_upload/FAO-countries/India/docs/Programmes_Projects/Priority3.pdf')" class="see-more">CLICK TO SEE MORE →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <img src="main/images/BL.png" alt="Priority Icon" class="priority-icon" />
+            <h3>Priority 4</h3>
+            <p class="subtitle">Inclusive, Gender-Responsive Agrifood Governance and Promotion of Private Sector Investment</p>
+            <a href="#" onclick="openPDF('https://www.fao.org/fileadmin/user_upload/FAO-countries/India/docs/Programmes_Projects/Priority4.pdf')" class="see-more">CLICK TO SEE MORE →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="row">
+        <div class="col">
+          <h5>About FAO India</h5>
+          <p>Learn more about FAO's mission and work in India to support sustainable agriculture and food security.</p>
+          <a href="https://www.fao.org/india/en/" target="_blank">Visit FAO India</a>
+        </div>
+        <div class="col">
+          <h5>Quick Links</h5>
+          <ul style="list-style: none; padding-left: 0;">
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Publications</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h5>Connect With Us</h5>
+          <p>Stay informed via our social channels and email newsletters.</p>
+          <a href="#">Facebook</a><br />
+          <a href="#">Twitter</a>
+        </div>
+        <div class="col">
+          <h5>Contact</h5>
+          <p>FAO Representation in India<br />New Delhi, India</p>
+          <a href="mailto:info@fao.org">info@fao.org</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script>
+    let currentPopup = null;
+    function openPDF(url) {
+      if (currentPopup && !currentPopup.closed) {
+        currentPopup.close();
+      }
+      const width = 1000;
+      const height = 700;
+      const left = (window.innerWidth - width) / 2;
+      const top = (window.innerHeight - height) / 2;
+      currentPopup = window.open(url, 'pdfPopup',
+        `toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${width},height=${height},top=${top},left=${left}`);
+    }
+  </script>
+</body>
+</html>
